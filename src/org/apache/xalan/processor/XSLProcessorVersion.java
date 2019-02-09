@@ -18,38 +18,17 @@
 /*
  * $Id$
  */
-package org.apache.xalan;
+package org.apache.xalan.processor;
 
 /**
  * Administrative class to keep track of the version number of
  * the Xalan release.
- * <P>This class implements the upcoming standard of having
- * org.apache.project-name.Version.getVersion() be a standard way 
- * to get version information.  This class will replace the older 
- * org.apache.xalan.processor.Version class.</P>
- * <P>See also: org/apache/xalan/res/XSLTInfo.properties for 
- * information about the version of the XSLT spec we support.</P>
+ * <P>See also: org/apache/xalan/res/XSLTInfo.properties</P>
+ * @deprecated To be replaced by org.apache.xalan.Version.getVersion()
  * @xsl.usage general
  */
-public class Version
+public class XSLProcessorVersion
 {
-
-  /**
-   * Get the basic version string for the current Xalan release.
-   * Version String formatted like 
-   * <CODE>"<B>Xalan</B> <B>Java</B> v.r[.dd| <B>D</B>nn]"</CODE>.
-   *
-   * Futurework: have this read version info from jar manifest.
-   *
-   * @return String denoting our current version
-   */
-  public static String getVersion()
-  {
-     return getProduct()+" "+getImplementationLanguage()+" "
-           +getMajorVersionNum()+"."+getReleaseVersionNum()+"."
-           +( (getDevelopmentVersionNum() > 0) ? 
-               ("D"+getDevelopmentVersionNum()) : (""+getMaintenanceVersionNum()));  
-  }
 
   /**
    * Print the processor version to the command line.
@@ -58,26 +37,19 @@ public class Version
    */
   public static void main(String argv[])
   {
-    System.out.println(getVersion());
-  }
-  
-  /**
-   * Name of product: Xalan.
-   */
-  public static String getProduct()
-  {
-    return "Xalan";
+    System.out.println(S_VERSION);
   }
 
   /**
-   * Implementation Language: Java.
+   * Constant name of product.
    */
-  public static String getImplementationLanguage()
-  {
-    return "Java";
-  }
-  
-  
+  public static final String PRODUCT = "Xalan";
+
+  /**
+   * Implementation Language.
+   */
+  public static final String LANGUAGE = "Java";
+
   /**
    * Major version number.
    * Version number. This changes only when there is a
@@ -89,11 +61,7 @@ public class Version
    *          of new versions as external interfaces and behaviour
    *          may have changed.
    */
-  public static int getMajorVersionNum()
-  {
-    return 2;
-    
-  }  
+  public static final int VERSION = 2;
 
   /**
    * Release Number.
@@ -103,11 +71,8 @@ public class Version
    *            -  API or behaviour change.
    *            -  its designated as a reference release.
    */
-  public static int getReleaseVersionNum()
-  {
-    return 7;
-  }
-  
+  public static final int RELEASE = 7;
+
   /**
    * Maintenance Drop Number.
    * Optional identifier used to designate maintenance
@@ -117,10 +82,7 @@ public class Version
    *          When missing, it designates the final and complete
    *          development drop for a release.
    */
-  public static int getMaintenanceVersionNum()
-  {
-    return 3;
-  }
+  public static final int MAINTENANCE = 3;
 
   /**
    * Development Drop Number.
@@ -139,15 +101,16 @@ public class Version
    *          well as defect fixes. 'D' drops may not be as stable as
    *          the final releases.
    */
-  public static int getDevelopmentVersionNum()
-  { 
-    try {   
-        if ((new String("")).length() == 0)
-          return 0;
-        else  
-          return Integer.parseInt("");
-    } catch (NumberFormatException nfe) {
-           return 0;
-    }    
-  }      
+  public static final int DEVELOPMENT = 0;
+  
+  /**
+   * Version String like <CODE>"<B>Xalan</B> <B>Language</B>
+   * v.r[.dd| <B>D</B>nn]"</CODE>.
+   * <P>Semantics of the version string are identical to the Xerces project.</P>
+   */
+  public static final String S_VERSION = PRODUCT+" "+LANGUAGE+" "
+                                   +VERSION+"."+RELEASE+"."
+                                   +(DEVELOPMENT > 0 ? ("D"+DEVELOPMENT)
+                                     : (""+MAINTENANCE));
+
 }
