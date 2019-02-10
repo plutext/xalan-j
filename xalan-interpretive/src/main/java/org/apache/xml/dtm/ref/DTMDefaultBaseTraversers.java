@@ -28,7 +28,7 @@ import org.apache.xml.utils.XMLStringFactory;
 
 import org.apache.xml.res.XMLErrorResources;
 import org.apache.xml.res.XMLMessages;
-import org.apache.xalan.xsltc.dom.NodeCounter;
+//import org.apache.xalan.xsltc.dom.NodeCounter;
 
 /**
  * This class implements the traversers for DTMDefaultBase.

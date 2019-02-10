@@ -5,17 +5,43 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
   <modelVersion>4.0.0</modelVersion>
+  
   <parent>
-    <groupId>org.apache</groupId>
-    <artifactId>apache</artifactId>
-    <version>4</version>
+    <groupId>org.sonatype.oss</groupId>
+    <artifactId>oss-parent</artifactId>
+    <version>7</version>
   </parent>
 
-  <groupId>xalan</groupId>
-  <artifactId>xalan</artifactId>
-  <version>2.7.3-SNAPSHOT</version>
+    <groupId>org.apache</groupId>
+	<artifactId>xalan-parent</artifactId>
+	
+	<version>${revision}</version>
+	<properties>
+		<revision>2.7.3-SNAPSHOT</revision>
+	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+	    <github.global.server>github</github.global.server>
+	</properties>
+
+    <packaging>pom</packaging>
 
   <name>Xalan Java</name>
+    
+    <modules>
+        <module>xalan-serializer</module>
+        <!-- can't split out <module>xalan-core</module> containing org.apache.xml, since it depends on xpath.NodeList -->
+        <module>xalan-interpretive</module>
+        <module>xalan-xsltc</module>
+        
+        <!-- 
+        <module>xalan-xsltc</module>
+	        <module>xalan-sample-servlet</module>
+	        <module>xalan-sample-translets</module>
+	        <module>xalan-sample-applet</module>
+         -->
+    </modules>  
+
+
   <description>
     Xalan-Java is an XSLT processor for transforming XML documents into HTML,
     text, or other XML document types. It implements XSL Transformations (XSLT)
@@ -24,13 +50,19 @@
   </description>
   <url>http://xml.apache.org/xalan-j/</url>  
 
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
         
-    <build>
-        <sourceDirectory>src</sourceDirectory>
-        
+    <build>        
+        <plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
+				<configuration>
+					<release>11</release>
+				</configuration>
+			</plugin>
+		</plugins>        
+<!--        
         <plugins>
 			<plugin> 
 				<groupId>org.apache.maven.plugins</groupId>
@@ -57,7 +89,7 @@
 				</executions>
 			</plugin>	
         </plugins>            
-        
+        -->        
 		<resources>
 			<resource>
 				<directory>src</directory>
@@ -72,46 +104,5 @@
         
     </build>
 
-	<dependencies>
-	
-		<dependency>
-			<groupId>xerces</groupId>
-			<artifactId>xercesImpl</artifactId>
-			<version>2.9.1</version>
-			<optional>true</optional>
-		</dependency>
-
-		<!-- lib/runtime.jar is java_cup; it is required at build time.
-		
-		We could mvn install it (i guess it is one of the 0.10k releases):
-		
-		  mvn install:install-file -Dfile=runtime.jar -DgroupId=java_cup -DartifactId=java_cup_runtime -Dversion=0.10k -Dpackaging=jar 
-		
-		but better, decompiled and added to source tree.
-		
-		See http://www2.cs.tum.edu/projects/cup/licence.php
-		-->
-
-		<!-- lib/BCEL replacement. 6.3 appears to work but probably BCEL 5.1 (of 
-			25 April 2003) is what Xalan uses, since 5.2 not released until June 2006. 
-			But 5.2 is in maven central, so use that -->
-		<dependency>
-			<groupId>org.apache.bcel</groupId>
-			<artifactId>bcel</artifactId>
-			<version>5.2</version>
-		</dependency>
-
-		<!-- lib/regexp replacement. Not required to build; but goes in shaded jar 
-			it is probably jakarta-regexp-1.3.zip of 2003-09-02 not jakarta-regexp-1.4.tar.gz 
-			of 2005-08-17, but 1.4 is in maven central, so use that -->
-		<dependency>
-			<groupId>jakarta-regexp</groupId>
-			<artifactId>jakarta-regexp</artifactId>
-			<version>1.4</version>
-		</dependency>
-
-
-
-  </dependencies>
 
 </project>

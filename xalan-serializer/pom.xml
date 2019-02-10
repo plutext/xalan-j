@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>xalan-parent</artifactId>
+	<version>${revision}</version>
+  </parent>
+
+	<artifactId>xalan-serializer</artifactId>
+	<packaging>jar</packaging>
+	<name>xalan-serializer</name>
+
+	<description>xalan-serializer</description>
+	<url>http://xml.apache.org/xalan-j/</url>  
+        
+    <build>
+        
+		<resources>
+			<resource>
+				<directory>src</directory>
+				<includes>
+					<include>**/*.properties</include>
+				</includes>
+			</resource>
+		     <resource>
+		       <directory>xalan-core/src/main/resources</directory><!--  META-INF/services is here for now -->
+		     </resource>
+		</resources>        
+        
+    </build>
+
+	<dependencies>
+	
+<!-- 		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.9.1</version>
+			<optional>true</optional>
+		</dependency>
+ -->
+  </dependencies>
+
+</project>
