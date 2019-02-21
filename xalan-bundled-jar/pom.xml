@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project 
+  xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>xalan-parent</artifactId>
+	<version>${revision}</version>
+  </parent>
+
+	<artifactId>xalan-bundled-jar</artifactId>
+	<packaging>jar</packaging>
+	<name>xalan-bundled-jar</name>
+
+	<description>Creates one big xalan jar (Xalan interpretive + XSLTC + support jars)</description>
+	<url>http://xml.apache.org/xalan-j/</url>  
+        
+    <build>
+        
+
+    <plugins>
+           
+			<plugin> 
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>2.4.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+						<configuration>
+                            <filters>
+                                <filter>
+                                    <artifact>org.apache:xalan-serializer</artifact>
+                                    <excludes>
+                                        <exclude>module-info.class</exclude>
+                                    </excludes>
+                                </filter>                            
+                                <filter>
+                                    <artifact>org.apache:xalan-interpretive</artifact>
+                                    <excludes>
+                                        <exclude>module-info.class</exclude>
+                                    </excludes>
+                                </filter>                            
+                                <filter>
+                                    <artifact>org.apache:xalan-xsltc</artifact>
+                                    <excludes>
+                                        <exclude>module-info.class</exclude>
+                                    </excludes>
+                                </filter>                            
+                            </filters>                            
+							<artifactSet>
+								<excludes>
+									<exclude>junit:junit</exclude>
+									<exclude>xerces:xercesImpl</exclude>
+									<exclude>xml-apis:xml-apis</exclude>
+								</excludes>								
+							</artifactSet>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
+                            <shadedClassifierName>shaded</shadedClassifierName>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- add module-info: this assumes Linux, but https://maven.apache.org/plugins/maven-compiler-plugin/examples/jpms_args.html 
+				is a world of pain -->
+			<plugin>
+				<artifactId>exec-maven-plugin</artifactId>
+				<groupId>org.codehaus.mojo</groupId>
+				<executions>
+					<execution>
+						<id>patch</id>
+						<phase>package</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<executable>./add-module-info.sh</executable>
+							<arguments>
+								<argument>xalan-bundled-jar-${revision}-shaded.jar</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>            
+
+        </plugins>            
+
+      
+		<resources>
+
+		     <resource>
+		       <directory>src/main/resources</directory><!--  META-INF/services is here for now -->
+		     </resource>
+		</resources>     
+        
+                
+    </build>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>xalan-interpretive</artifactId>
+			<version>${revision}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache</groupId>
+			<artifactId>xalan-xsltc</artifactId>
+			<version>${revision}</version>
+		</dependency>
+        
+		<dependency>
+			<groupId>xerces</groupId>
+			<artifactId>xercesImpl</artifactId>
+			<version>2.9.1</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- lib/runtime.jar is java_cup; it is required at build time.
+		
+		We could mvn install it (i guess it is one of the 0.10k releases):
+		
+		  mvn install:install-file -Dfile=runtime.jar -DgroupId=java_cup -DartifactId=java_cup_runtime -Dversion=0.10k -Dpackaging=jar 
+		
+		but better, decompiled and added to source tree.
+		
+		See http://www2.cs.tum.edu/projects/cup/licence.php
+		-->
+
+		<!-- lib/BCEL replacement. 6.3 appears to work but probably BCEL 5.1 (of 
+			25 April 2003) is what Xalan uses, since 5.2 not released until June 2006. 
+			But 5.2 is in maven central, so use that -->
+		<dependency>
+			<groupId>org.apache.bcel</groupId>
+			<artifactId>bcel</artifactId>
+			<version>5.2</version>
+		</dependency>
+
+		<!-- lib/regexp replacement. Not required to build; but goes in shaded jar 
+			it is probably jakarta-regexp-1.3.zip of 2003-09-02 not jakarta-regexp-1.4.tar.gz 
+			of 2005-08-17, but 1.4 is in maven central, so use that -->
+		<dependency>
+			<groupId>jakarta-regexp</groupId>
+			<artifactId>jakarta-regexp</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+
+
+  </dependencies>
+
+</project>
