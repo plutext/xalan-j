@@ -1,4 +1,4 @@
-# Xalan-J
+# Xalan for Java 11
 
 This is Xalan:
 
