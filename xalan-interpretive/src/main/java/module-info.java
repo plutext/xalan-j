@@ -2,7 +2,7 @@
  * @author jharrop
  *
  */
-module xalan_interpretive {
+module docx4j_xalan_interpretive {
 	
 	exports org.docx4j.org.apache.xalan;
 	exports org.docx4j.org.apache.xalan.xslt;
@@ -39,7 +39,7 @@ module xalan_interpretive {
 	requires java.sql;
 	requires java.xml;
 	requires jdk.xml.dom;
-	requires xalan_serializer;
+	requires docx4j_xalan_serializer;
 	//requires xercesImpl;  
 	/* could remove IncrementalSAXSource_Xerces so Xerces not required. Solves javax.xml coming from 2 modules
 	The package org.w3c.dom is accessible from more than one module: java.xml, xercesImpl */

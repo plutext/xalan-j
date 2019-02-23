@@ -2,7 +2,7 @@
  * @author jharrop
  *
  */
-module xalan_bundled_jar {
+module docx4j_xalan_bundled_jar {
 
 /*  To manually add this to the shaded jar:
 
