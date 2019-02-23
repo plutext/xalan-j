@@ -31,7 +31,6 @@
         <module>xalan-serializer</module>
         <!-- can't split out <module>xalan-core</module> containing org.apache.xml, since it depends on xpath.NodeList -->
         <module>xalan-interpretive</module>
-        <module>xalan-xsltc</module>
         <module>xalan-bundled-jar</module>
         
         <!-- 

@@ -50,20 +50,6 @@ $ javac --patch-module xalan_bundled_jar=target/xalan-bundled-jar-2.7.3-SNAPSHOT
 	exports org.apache.xalan.serialize;
 	exports org.apache.xpath.axes;
 
-/* xalan_xsltc */
-
-	exports org.apache.xalan.xsltc.cmdline.getopt;
-	exports org.apache.xalan.xsltc;
-	exports org.apache.xalan.xsltc.cmdline;
-	exports org.apache.xalan.xsltc.runtime.output;
-	exports org.apache.xalan.xsltc.compiler;
-	exports org.apache.xalan.xsltc.runtime;
-	exports org.apache.xalan.xsltc.dom;
-	exports org.apache.xalan.xsltc.util;
-	exports org.apache.xalan.xsltc.trax;
-	exports org.apache.xalan.xsltc.compiler.util;
-
-	exports java_cup.runtime;
 
 /* xalan_serializer */
 
@@ -80,10 +66,6 @@ $ javac --patch-module xalan_bundled_jar=target/xalan-bundled-jar-2.7.3-SNAPSHOT
 	/* could remove IncrementalSAXSource_Xerces so Xerces not required. Solves javax.xml coming from 2 modules
 	The package org.w3c.dom is accessible from more than one module: java.xml, xercesImpl */
 
-/* xalan_xsltc */
-	
-	//requires bcel;
-	//requires java.xml;
 	
 	/* The package org.w3c.dom is accessible from more than one module: java.xml, xercesImpl, xml.apis 
 	 * 
