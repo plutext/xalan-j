@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache</groupId>
+    <groupId>org.docx4j.org.apache</groupId>
     <artifactId>xalan-parent</artifactId>
 	<version>${revision}</version>
   </parent>
@@ -36,19 +36,13 @@
 						<configuration>
                             <filters>
                                 <filter>
-                                    <artifact>org.apache:xalan-serializer</artifact>
+                                    <artifact>org.docx4j.org.apache:xalan-serializer</artifact>
                                     <excludes>
                                         <exclude>module-info.class</exclude>
                                     </excludes>
                                 </filter>                            
                                 <filter>
-                                    <artifact>org.apache:xalan-interpretive</artifact>
-                                    <excludes>
-                                        <exclude>module-info.class</exclude>
-                                    </excludes>
-                                </filter>                            
-                                <filter>
-                                    <artifact>org.apache:xalan-xsltc</artifact>
+                                    <artifact>org.docx4j.org.apache:xalan-interpretive</artifact>
                                     <excludes>
                                         <exclude>module-info.class</exclude>
                                     </excludes>
@@ -106,7 +100,7 @@
 	<dependencies>
 
 		<dependency>
-			<groupId>org.apache</groupId>
+			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-interpretive</artifactId>
 			<version>${revision}</version>
 		</dependency>

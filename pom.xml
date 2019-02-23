@@ -12,7 +12,7 @@
     <version>7</version>
   </parent>
 
-    <groupId>org.apache</groupId>
+    <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>
 	
 	<version>${revision}</version>

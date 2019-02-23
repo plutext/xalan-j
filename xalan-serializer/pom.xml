@@ -6,7 +6,7 @@
 
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.apache</groupId>
+    <groupId>org.docx4j.org.apache</groupId>
     <artifactId>xalan-parent</artifactId>
 	<version>${revision}</version>
   </parent>
