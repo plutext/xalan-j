@@ -1,6 +1,32 @@
 Manifest-Version: 1.0
 Created-By: @java.version@ (@java.vendor@)
+Main-Class: org.apache.xalan.xslt.Process
 Class-Path: xercesImpl.jar xml-apis.jar serializer.jar
+
+
+Name: org/apache/xalan/
+Comment: Main Xalan engine implementing TrAX/JAXP
+Specification-Title: Java API for XML Processing
+Specification-Vendor: Sun Microsystems Inc.
+Specification-Version: 1.3
+Implementation-Title: org.apache.xalan
+Implementation-Version: @impl.version@
+Implementation-Vendor: Apache Software Foundation
+Implementation-URL: http://xml.apache.org/xalan-j/
+
+Name: org/apache/xpath/
+Comment: XPath engine
+Implementation-Title: org.apache.xpath
+Implementation-Version: @impl.version@
+Implementation-Vendor: Apache Software Foundation
+Implementation-URL: http://xml.apache.org/xalan-j/
+
+Name: org/apache/xml/
+Comment: DTM implementation and utilities
+Implementation-Title: org.apache.xml
+Implementation-Version: @impl.version@
+Implementation-Vendor: Apache Software Foundation
+Implementation-URL: http://xml.apache.org/xalan-j/
 
 Name: org/apache/xalan/xsltc/
 Comment: Main XSLTC engine implementing TrAX/JAXP
@@ -10,16 +36,9 @@ Specification-Version: 1.3
 Implementation-Title: org.apache.xalan.xsltc
 Implementation-Version: @impl.version@
 Implementation-Vendor: Apache Software Foundation
-Implementation-URL: http://xml.apache.org/xalan-j/dist/
+Implementation-URL: http://xml.apache.org/xalan-j/
 
-Name: org/apache/xml/
-Comment: DTM implementation and utilities
-Implementation-Title: org.apache.xml
-Implementation-Version: @impl.version@
-Implementation-Vendor: Apache Software Foundation
-Implementation-URL: http://xml.apache.org/xalan-j/dist/
-
-Name: java_cup/runtime/
+Name: java_cup/runtime/ 
 Comment: Runtime component of JCup 
 Specification-Title: Runtime component of JCup
 Specification-Vendor: Princeton University 
