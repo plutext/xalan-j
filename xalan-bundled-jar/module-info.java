@@ -4,6 +4,14 @@
  */
 module xalan_bundled_jar {
 
+/*  To manually add this to the shaded jar:
+
+$ javac --patch-module xalan_bundled_jar=target/xalan-bundled-jar-2.7.3-SNAPSHOT-shaded.jar module-info.java 
+
+(but mvn will do this for you)
+
+*/
+
 /* xalan_serializer */
 
 	exports org.apache.xml.serializer;
