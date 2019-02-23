@@ -17,7 +17,7 @@
 	
 	<version>${revision}</version>
 	<properties>
-		<revision>2.7.3-SNAPSHOT</revision>
+		<revision>11.7.3-SNAPSHOT</revision>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
 	    <github.global.server>github</github.global.server>
@@ -44,10 +44,10 @@
   <description>
     Xalan-Java is an XSLT processor for transforming XML documents into HTML,
     text, or other XML document types. It implements XSL Transformations (XSLT)
-    Version 1.0 and XML Path Language (XPath) Version 1.0 and can be used from
-    the command line, in an applet or a servlet, or as a module in other program.
+    Version 1.0 and XML Path Language (XPath) Version 1.0.
   </description>
-  <url>http://xml.apache.org/xalan-j/</url>  
+  
+  <url>https://github.com/plutext/xalan-j</url>  
 
         
     <build>        
