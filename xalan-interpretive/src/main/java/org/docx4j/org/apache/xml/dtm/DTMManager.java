@@ -376,7 +376,10 @@ public abstract class DTMManager
    * comparison against the previous "golden" files will probably
    * complain.)
    * */
-  public static final int IDENT_DTM_NODE_BITS = 16;
+  public static final int IDENT_DTM_NODE_BITS  = 10; 
+  // see http://www.mail-archive.com/xalan-j-users@xml.apache.org/msg04890.html
+  // and https://www.docx4java.org/forums/docx-java-f6/exception-when-exporting-pdf-no-more-dtm-ids-are-available-t2291.html
+  // Using 10 here gives 2^22 (~4M) nodes per document.
     
 
   /** When this bitmask is ANDed with a DTM node handle number, the result
