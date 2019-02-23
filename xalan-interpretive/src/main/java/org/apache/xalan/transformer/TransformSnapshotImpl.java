@@ -31,11 +31,9 @@ import org.apache.xml.utils.NodeVector;
 import org.apache.xml.utils.ObjectStack;
 import org.apache.xpath.VariableStack;
 import org.apache.xpath.XPathContext;
-
+import org.docx4j.org.apache.xml.serializer.NamespaceMappings;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.helpers.NamespaceSupport;
-
-import org.apache.xml.serializer.NamespaceMappings;
-import org.apache.xml.serializer.SerializationHandler;
 /**
  * This class holds a "snapshot" of it's current transformer state,
  * which can later be restored.

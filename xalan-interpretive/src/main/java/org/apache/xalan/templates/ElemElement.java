@@ -24,10 +24,10 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.res.XSLTErrorResources;
 import org.apache.xalan.transformer.TransformerImpl;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.QName;
 import org.apache.xml.utils.XML11Char;
 import org.apache.xpath.XPathContext;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.SAXException;
 
 /**

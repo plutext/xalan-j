@@ -33,7 +33,7 @@ import org.apache.xml.dtm.DTMManager;
 import org.apache.xml.dtm.ref.IncrementalSAXSource_Filter;
 import org.apache.xml.dtm.ref.sax2dtm.SAX2DTM;
 import org.apache.xpath.XPathContext;
-
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.DTDHandler;
@@ -45,7 +45,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.ext.DeclHandler;
 import org.xml.sax.ext.LexicalHandler;
-import org.apache.xml.serializer.SerializationHandler;
 
 
 /**

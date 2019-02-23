@@ -26,9 +26,9 @@ import org.apache.xml.utils.FastStringBuffer;
 import org.apache.xml.utils.XMLString;
 import org.apache.xml.utils.XMLStringDefault;
 import org.apache.xml.utils.XMLStringFactory;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.res.XMLMessages;
 import org.apache.xml.res.XMLErrorResources;
-import org.apache.xml.serializer.SerializationHandler;
 
 import javax.xml.transform.Source;
 import java.util.Vector;

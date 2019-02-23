@@ -31,8 +31,7 @@ import org.apache.xalan.templates.ElemTemplateElement;
 import org.apache.xalan.templates.ElemTextLiteral;
 import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.ref.DTMNodeProxy;
-import org.apache.xml.serializer.SerializerTrace;
-
+import org.docx4j.org.apache.xml.serializer.SerializerTrace;
 import org.w3c.dom.Node;
 
 /**

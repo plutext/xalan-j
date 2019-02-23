@@ -31,12 +31,11 @@ import javax.xml.transform.TransformerException;
 import org.apache.xalan.res.XSLMessages;
 import org.apache.xalan.res.XSLTErrorResources;
 import org.apache.xalan.transformer.TransformerImpl;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.PrefixResolver;
 import org.apache.xml.utils.UnImplNode;
 import org.apache.xpath.ExpressionNode;
 import org.apache.xpath.WhitespaceStrippingElementMatcher;
-
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.w3c.dom.DOMException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;

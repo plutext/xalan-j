@@ -43,7 +43,8 @@ import org.apache.xalan.templates.ElemLiteralResult;
 import org.apache.xalan.transformer.TransformerImpl;
 import org.apache.xml.utils.SystemIDResolver;
 import org.apache.xpath.XPathContext;
-
+import org.docx4j.org.apache.xml.serializer.Serializer;
+import org.docx4j.org.apache.xml.serializer.SerializerFactory;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -52,11 +53,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
-/**
- */
-// Imported Serializer classes
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
 
 /**
  * PipeDocument is a Xalan extension element to set stylesheet params and pipes an XML 

@@ -24,8 +24,8 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.serialize.SerializerUtils;
 import org.apache.xml.dtm.DTM;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.XMLString;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 
 /**
  * Class used to clone a node, possibly including its children to 

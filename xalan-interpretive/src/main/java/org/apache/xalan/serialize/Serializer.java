@@ -31,7 +31,7 @@ import org.xml.sax.ContentHandler;
  * The Serializer interface is implemented by Serializers to publish methods
  * to get and set streams and writers, to set the output properties, and
  * get the Serializer as a ContentHandler or DOMSerializer.
- * @deprecated Use org.apache.xml.serializer.Serializer
+ * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
  */
 public interface Serializer
 {
@@ -47,7 +47,7 @@ public interface Serializer
    *
    * @param output The output stream
    * 
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public void setOutputStream(OutputStream output);
 
@@ -56,7 +56,7 @@ public interface Serializer
    *
    * @return reference to the result stream, or null of only a writer was
    * set.
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public OutputStream getOutputStream();
 
@@ -70,7 +70,7 @@ public interface Serializer
    *
    * @param writer The output writer stream
    * 
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public void setWriter(Writer writer);
 
@@ -78,7 +78,7 @@ public interface Serializer
    * Get the character stream where the events will be serialized to.
    *
    * @return Reference to the result Writer, or null.
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public Writer getWriter();
 
@@ -91,7 +91,7 @@ public interface Serializer
    *
    * @param format The output format to use
    * 
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public void setOutputFormat(Properties format);
 
@@ -99,7 +99,7 @@ public interface Serializer
    * Returns the output format for this serializer.
    *
    * @return The output format in use
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public Properties getOutputFormat();
 
@@ -111,7 +111,7 @@ public interface Serializer
    * @return A {@link ContentHandler} interface into this serializer,
    *  or null if the serializer is not SAX 2 capable
    * @throws IOException An I/O exception occured
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public ContentHandler asContentHandler() throws IOException;
 
@@ -123,7 +123,7 @@ public interface Serializer
    * @return A {@link DOMSerializer} interface into this serializer,
    *  or null if the serializer is not DOM capable
    * @throws IOException An I/O exception occured
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public DOMSerializer asDOMSerializer() throws IOException;
 
@@ -136,7 +136,7 @@ public interface Serializer
    *
    * @return True if serializer has been reset and can be reused
    * 
-   * @deprecated Use org.apache.xml.serializer.Serializer
+   * @deprecated Use org.docx4j.org.apache.xml.serializer.Serializer
    */
   public boolean reset();
 }

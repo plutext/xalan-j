@@ -23,8 +23,8 @@ package org.apache.xalan.transformer;
 import org.apache.xalan.serialize.SerializerUtils;
 import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.ref.DTMTreeWalker;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xpath.XPathContext;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 
 /**
  * Handle a walk of a tree, but screen out attributes for

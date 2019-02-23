@@ -29,7 +29,6 @@ import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.DTMAxisIterator;
 import org.apache.xml.dtm.DTMIterator;
 import org.apache.xalan.serialize.SerializerUtils;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.QName;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.axes.DescendantIterator;
@@ -40,6 +39,7 @@ import org.apache.xpath.objects.XNumber;
 import org.apache.xpath.objects.XObject;
 import org.apache.xpath.objects.XRTreeFrag;
 import org.apache.xpath.objects.XString;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.traversal.NodeIterator;
 

@@ -28,13 +28,13 @@ import org.apache.xalan.transformer.StackGuard;
 import org.apache.xalan.transformer.TransformerImpl;
 import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.DTMIterator;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.IntStack;
 import org.apache.xml.utils.QName;
 import org.apache.xpath.VariableStack;
 import org.apache.xpath.XPath;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.objects.XObject;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.SAXException;
 
 /**

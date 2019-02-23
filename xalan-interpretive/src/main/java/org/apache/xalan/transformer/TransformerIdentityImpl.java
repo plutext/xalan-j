@@ -49,12 +49,11 @@ import javax.xml.transform.stream.StreamResult;
 import org.apache.xalan.res.XSLMessages;
 import org.apache.xalan.res.XSLTErrorResources;
 import org.apache.xalan.templates.OutputProperties;
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
-import org.apache.xml.serializer.Method;
 import org.apache.xml.utils.DOMBuilder;
 import org.apache.xml.utils.XMLReaderManager;
-
+import org.docx4j.org.apache.xml.serializer.Method;
+import org.docx4j.org.apache.xml.serializer.Serializer;
+import org.docx4j.org.apache.xml.serializer.SerializerFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.DocumentFragment;
 import org.w3c.dom.Node;
@@ -390,8 +389,8 @@ public class TransformerIdentityImpl extends Transformer
               }
               else
               { 
-                org.apache.xml.serializer.TreeWalker walker;
-                walker = new org.apache.xml.serializer.TreeWalker(this, m_systemID);
+                org.docx4j.org.apache.xml.serializer.TreeWalker walker;
+                walker = new org.docx4j.org.apache.xml.serializer.TreeWalker(this, m_systemID);
                 walker.traverse(dNode);
               }
             }

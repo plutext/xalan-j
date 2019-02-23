@@ -27,11 +27,10 @@ import java.util.Properties;
 import javax.xml.transform.OutputKeys;
 import javax.xml.transform.TransformerException;
 
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
-import org.apache.xml.serializer.Method;
 import org.apache.xalan.templates.OutputProperties;
-
+import org.docx4j.org.apache.xml.serializer.Method;
+import org.docx4j.org.apache.xml.serializer.Serializer;
+import org.docx4j.org.apache.xml.serializer.SerializerFactory;
 import org.xml.sax.ContentHandler;
 
 /**

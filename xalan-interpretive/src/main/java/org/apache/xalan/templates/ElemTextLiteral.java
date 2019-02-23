@@ -23,7 +23,7 @@ package org.apache.xalan.templates;
 import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.transformer.TransformerImpl;
-import org.apache.xml.serializer.SerializationHandler;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.SAXException;
 
 /**

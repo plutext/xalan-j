@@ -29,10 +29,10 @@ import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.DTMIterator;
 import org.apache.xml.dtm.ref.DTMTreeWalker;
 import org.apache.xalan.serialize.SerializerUtils;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xpath.XPath;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.objects.XObject;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 
 /**
  * Implement xsl:copy-of.

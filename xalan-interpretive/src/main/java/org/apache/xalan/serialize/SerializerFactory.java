@@ -31,7 +31,7 @@ import org.xml.sax.ContentHandler;
 /**
  * Factory for creating serializers.
  * @deprecated The new class to use is 
- * org.apache.xml.serializer.SerializerFactory
+ * org.docx4j.org.apache.xml.serializer.SerializerFactory
  */
 public abstract class SerializerFactory
 {
@@ -43,7 +43,7 @@ public abstract class SerializerFactory
      * Returns a serializer for the specified output method. Returns
      * null if no implementation exists that supports the specified
      * output method. For a list of the default output methods see
-     * {@link org.apache.xml.serializer.Method}.
+     * {@link org.docx4j.org.apache.xml.serializer.Method}.
      *
      * @param format The output format
      * @return A suitable serializer, or null
@@ -51,12 +51,12 @@ public abstract class SerializerFactory
      * null or an appropriate serializer can't be found
      * @throws WrappedRuntimeException (apparently -sc) if an
      * exception is thrown while trying to find serializer
-     * @deprecated Use org.apache.xml.serializer.SerializerFactory
+     * @deprecated Use org.docx4j.org.apache.xml.serializer.SerializerFactory
      */
     public static Serializer getSerializer(Properties format)
     {
-        org.apache.xml.serializer.Serializer ser;
-        ser = org.apache.xml.serializer.SerializerFactory.getSerializer(format);
+        org.docx4j.org.apache.xml.serializer.Serializer ser;
+        ser = org.docx4j.org.apache.xml.serializer.SerializerFactory.getSerializer(format);
         SerializerFactory.SerializerWrapper si = new SerializerWrapper(ser);
         return si;
 
@@ -70,10 +70,10 @@ public abstract class SerializerFactory
 
     private static class SerializerWrapper implements Serializer
     {
-        private final org.apache.xml.serializer.Serializer m_serializer;
+        private final org.docx4j.org.apache.xml.serializer.Serializer m_serializer;
         private DOMSerializer m_old_DOMSerializer;
 
-        SerializerWrapper(org.apache.xml.serializer.Serializer ser)
+        SerializerWrapper(org.docx4j.org.apache.xml.serializer.Serializer ser)
         {
             m_serializer = ser;
 
@@ -144,8 +144,8 @@ public abstract class SerializerFactory
      */
     private static class DOMSerializerWrapper implements DOMSerializer
     {
-        private final org.apache.xml.serializer.DOMSerializer m_dom;
-        DOMSerializerWrapper(org.apache.xml.serializer.DOMSerializer domser)
+        private final org.docx4j.org.apache.xml.serializer.DOMSerializer m_dom;
+        DOMSerializerWrapper(org.docx4j.org.apache.xml.serializer.DOMSerializer domser)
         {
             m_dom = domser;
         }

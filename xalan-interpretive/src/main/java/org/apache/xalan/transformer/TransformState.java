@@ -24,8 +24,7 @@ import javax.xml.transform.Transformer;
 
 import org.apache.xalan.templates.ElemTemplate;
 import org.apache.xalan.templates.ElemTemplateElement;
-import org.apache.xml.serializer.TransformStateSetter;
-
+import org.docx4j.org.apache.xml.serializer.TransformStateSetter;
 import org.w3c.dom.Node;
 import org.w3c.dom.traversal.NodeIterator;
 
@@ -47,7 +46,7 @@ import org.w3c.dom.traversal.NodeIterator;
  * This interface contains only getter methods, any setters are in the interface
  * TransformStateSetter which this interface extends.
  * 
- * @see org.apache.xml.serializer.TransformStateSetter
+ * @see org.docx4j.org.apache.xml.serializer.TransformStateSetter
  */
 public interface TransformState extends TransformStateSetter
 {

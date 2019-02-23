@@ -36,7 +36,7 @@ import org.apache.xalan.templates.OutputProperties;
 import org.apache.xalan.transformer.TransformerImpl;
 import org.apache.xpath.XPath;
 import org.apache.xpath.objects.XObject;
-import org.apache.xml.serializer.SerializationHandler;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.ContentHandler;
 
 /**

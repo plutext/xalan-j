@@ -142,7 +142,7 @@ public abstract class QueuedEvents
   }
 
   /** Instance of a serializer          */
-  private org.apache.xml.serializer.Serializer m_serializer;
+  private org.docx4j.org.apache.xml.serializer.Serializer m_serializer;
 
   /**
    * This is only for use of object pooling, so that
@@ -150,7 +150,7 @@ public abstract class QueuedEvents
    *
    * @param s non-null instance of a serializer 
    */
-  void setSerializer(org.apache.xml.serializer.Serializer s)
+  void setSerializer(org.docx4j.org.apache.xml.serializer.Serializer s)
   {
     m_serializer = s;
   }
@@ -161,7 +161,7 @@ public abstract class QueuedEvents
    *
    * @return The serializer
    */
-  org.apache.xml.serializer.Serializer getSerializer()
+  org.docx4j.org.apache.xml.serializer.Serializer getSerializer()
   {
     return m_serializer;
   }

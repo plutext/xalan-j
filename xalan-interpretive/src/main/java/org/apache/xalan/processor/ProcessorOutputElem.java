@@ -25,9 +25,9 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.templates.ElemTemplateElement;
 import org.apache.xalan.templates.OutputProperties;
-import org.apache.xml.serializer.OutputPropertiesFactory;
 import org.apache.xml.utils.QName;
 import org.apache.xml.utils.SystemIDResolver;
+import org.docx4j.org.apache.xml.serializer.OutputPropertiesFactory;
 import org.xml.sax.Attributes;
 
 /**

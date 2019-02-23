@@ -25,11 +25,11 @@ import javax.xml.transform.TransformerException;
 import org.apache.xalan.res.XSLTErrorResources;
 import org.apache.xalan.transformer.TransformerImpl;
 import org.apache.xml.dtm.DTM;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xpath.Expression;
 import org.apache.xpath.XPath;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.objects.XObject;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.SAXException;
 
 /**

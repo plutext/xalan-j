@@ -49,9 +49,6 @@ import javax.xml.transform.stream.StreamSource;
 import org.apache.xalan.extensions.ExtensionsTable;
 import org.apache.xalan.res.XSLMessages;
 import org.apache.xalan.res.XSLTErrorResources;
-import org.apache.xml.serializer.Method;
-import org.apache.xml.serializer.Serializer;
-import org.apache.xml.serializer.SerializerFactory;
 import org.apache.xalan.templates.AVT;
 import org.apache.xalan.templates.Constants;
 import org.apache.xalan.templates.ElemAttributeSet;
@@ -72,10 +69,6 @@ import org.apache.xml.dtm.DTM;
 import org.apache.xml.dtm.DTMIterator;
 import org.apache.xml.dtm.DTMManager;
 import org.apache.xml.dtm.DTMWSFilter;
-import org.apache.xml.serializer.ToSAXHandler;
-import org.apache.xml.serializer.ToTextStream;
-import org.apache.xml.serializer.ToXMLSAXHandler;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xml.utils.BoolStack;
 import org.apache.xml.utils.DOMBuilder;
 import org.apache.xml.utils.NodeVector;
@@ -90,6 +83,13 @@ import org.apache.xpath.VariableStack;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.functions.FuncExtFunction;
 import org.apache.xpath.objects.XObject;
+import org.docx4j.org.apache.xml.serializer.Method;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
+import org.docx4j.org.apache.xml.serializer.Serializer;
+import org.docx4j.org.apache.xml.serializer.SerializerFactory;
+import org.docx4j.org.apache.xml.serializer.ToSAXHandler;
+import org.docx4j.org.apache.xml.serializer.ToTextStream;
+import org.docx4j.org.apache.xml.serializer.ToXMLSAXHandler;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
@@ -105,7 +105,7 @@ import org.xml.sax.ext.LexicalHandler;
  * @xsl.usage advanced
  */
 public class TransformerImpl extends Transformer
-        implements Runnable, DTMWSFilter, ExtensionsProvider, org.apache.xml.serializer.SerializerTrace
+        implements Runnable, DTMWSFilter, ExtensionsProvider, org.docx4j.org.apache.xml.serializer.SerializerTrace
 {
 
   // Synch object to gaurd against setting values from the TrAX interface 
@@ -2067,7 +2067,7 @@ public class TransformerImpl extends Transformer
         // if we didn't get one from the pool, go make a new one
 
         
-        Serializer serializer = org.apache.xml.serializer.SerializerFactory.getSerializer(
+        Serializer serializer = org.docx4j.org.apache.xml.serializer.SerializerFactory.getSerializer(
             m_textformat.getProperties());
         m_serializationHandler = (SerializationHandler) serializer;
       } 
@@ -3595,7 +3595,7 @@ public class TransformerImpl extends Transformer
      
 	/**
 	 * Fire off characters, cdate events.
-	 * @see org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, char[], int, int)
+	 * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, char[], int, int)
 	 */
 	public void fireGenerateEvent(
 		int eventType,
@@ -3609,7 +3609,7 @@ public class TransformerImpl extends Transformer
 
 	/**
 	 * Fire off startElement, endElement events.
-	 * @see org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String, Attributes)
+	 * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String, Attributes)
 	 */
 	public void fireGenerateEvent(
 		int eventType,
@@ -3622,7 +3622,7 @@ public class TransformerImpl extends Transformer
 
 	/**
 	 * Fire off processingInstruction events.
-	 * @see org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String, String)
+	 * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String, String)
 	 */
 	public void fireGenerateEvent(int eventType, String name, String data) {
 		GenerateEvent ge = new GenerateEvent(this, eventType, name,data);
@@ -3631,7 +3631,7 @@ public class TransformerImpl extends Transformer
 
 	/**
 	 * Fire off comment and entity ref events.
-	 * @see org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String)
+	 * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int, String)
 	 */
 	public void fireGenerateEvent(int eventType, String data) {
 		GenerateEvent ge = new GenerateEvent(this, eventType, data);
@@ -3640,7 +3640,7 @@ public class TransformerImpl extends Transformer
 
 	/**
 	 * Fire off startDocument, endDocument events.
-	 * @see org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int)
+	 * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#fireGenerateEvent(int)
 	 */
 	public void fireGenerateEvent(int eventType) {
 		GenerateEvent ge = new GenerateEvent(this, eventType);
@@ -3648,7 +3648,7 @@ public class TransformerImpl extends Transformer
 	}
 
     /**
-     * @see org.apache.xml.serializer.SerializerTrace#hasTraceListeners()
+     * @see org.docx4j.org.apache.xml.serializer.SerializerTrace#hasTraceListeners()
      */
     public boolean hasTraceListeners() {
         return m_traceManager.hasTraceListeners();

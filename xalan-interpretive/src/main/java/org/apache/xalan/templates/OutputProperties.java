@@ -29,10 +29,10 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.res.XSLMessages;
 import org.apache.xalan.res.XSLTErrorResources;
-import org.apache.xml.serializer.OutputPropertiesFactory;
-import org.apache.xml.serializer.OutputPropertyUtils;
 import org.apache.xml.utils.FastStringBuffer;
 import org.apache.xml.utils.QName;
+import org.docx4j.org.apache.xml.serializer.OutputPropertiesFactory;
+import org.docx4j.org.apache.xml.serializer.OutputPropertyUtils;
 
 /**
  * This class provides information from xsl:output elements. It is mainly
@@ -55,7 +55,7 @@ public class OutputProperties extends ElemTemplateElement
    */
   public OutputProperties()
   {
-    this(org.apache.xml.serializer.Method.XML);
+    this(org.docx4j.org.apache.xml.serializer.Method.XML);
   }
 
   /**
@@ -679,11 +679,11 @@ public class OutputProperties extends ElemTemplateElement
      *
      * @return Properties object that holds the defaults for the given method.
      * 
-     * @deprecated Use org.apache.xml.serializer.OuputPropertiesFactory.
+     * @deprecated Use org.docx4j.org.apache.xml.serializer.OuputPropertiesFactory.
      * getDefaultMethodProperties directly.
      */
     static public Properties getDefaultMethodProperties(String method)
     {
-        return org.apache.xml.serializer.OutputPropertiesFactory.getDefaultMethodProperties(method);
+        return org.docx4j.org.apache.xml.serializer.OutputPropertiesFactory.getDefaultMethodProperties(method);
     }
 }

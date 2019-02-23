@@ -24,15 +24,15 @@ import javax.xml.transform.TransformerException;
 
 import org.apache.xalan.transformer.TransformerImpl;
 import org.apache.xml.dtm.DTM;
-import org.apache.xml.serializer.NamespaceMappings;
-import org.apache.xml.serializer.SerializationHandler;
 import org.apache.xpath.XPathContext;
 import org.apache.xpath.objects.XObject;
+import org.docx4j.org.apache.xml.serializer.NamespaceMappings;
+import org.docx4j.org.apache.xml.serializer.SerializationHandler;
 import org.xml.sax.SAXException;
 
 /**
  * Class that contains only static methods that are used to "serialize",
- * these methods are used by Xalan and are not in org.apache.xml.serializer
+ * these methods are used by Xalan and are not in org.docx4j.org.apache.xml.serializer
  * because they have dependancies on the packages org.apache.xpath or org.
  * apache.xml.dtm or org.apache.xalan.transformer. The package org.apache.xml.
  * serializer should not depend on Xalan or XSLTC.

@@ -285,7 +285,7 @@ public class StylesheetRoot extends StylesheetComposed
     // We set up the global variables that will hold the recomposed information.
 
 
-    m_outputProperties = new OutputProperties(org.apache.xml.serializer.Method.UNKNOWN);
+    m_outputProperties = new OutputProperties(org.docx4j.org.apache.xml.serializer.Method.UNKNOWN);
 //  m_outputProperties = new OutputProperties(Method.XML);
     
     m_attrSets = new HashMap();
