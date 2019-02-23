@@ -22,14 +22,11 @@
         
 		<resources>
 			<resource>
-				<directory>src</directory>
+				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.properties</include>
 				</includes>
 			</resource>
-		     <resource>
-		       <directory>xalan-core/src/main/resources</directory><!--  META-INF/services is here for now -->
-		     </resource>
 		</resources>        
         
     </build>
@@ -42,14 +39,15 @@
 			<version>${revision}</version>
 		</dependency>
         
-        <!-- IncrementalSAXSource_Xerces depends on Xerces  -->
+        <!-- IncrementalSAXSource_Xerces depends on Xerces, but we've removed that 
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
 			<version>2.9.1</version>
 			<optional>true</optional>
 		</dependency>
-
+        -->
+        
   </dependencies>
 
 </project>

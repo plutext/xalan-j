@@ -18,17 +18,17 @@
 	<description>xalan-xsltc</description>
 	<url>http://xml.apache.org/xalan-j/</url>  
         
-    <build>
-        
+    <build>        
+                
 		<resources>
 			<resource>
-				<directory>src</directory>
+				<directory>src/main/java</directory>
 				<includes>
 					<include>**/*.properties</include>
 				</includes>
 			</resource>
 		     <resource>
-		       <directory>xalan-core/src/main/resources</directory><!--  META-INF/services is here for now -->
+		       <directory>src/main/resources</directory>
 		     </resource>
 		</resources>        
         
@@ -42,13 +42,17 @@
 			<version>${revision}</version>
 		</dependency>
         
+        <!--
 		<dependency>
 			<groupId>xerces</groupId>
 			<artifactId>xercesImpl</artifactId>
 			<version>2.9.1</version>
 			<optional>true</optional>
 		</dependency>
+        -->
 
+        <!-- The original Xalan deps are listed at https://github.com/plutext/xalan-j/blob/trunk/src/MANIFEST.MF" -->
+        
 		<!-- lib/runtime.jar is java_cup; it is required at build time.
 		
 		We could mvn install it (i guess it is one of the 0.10k releases):
@@ -60,8 +64,8 @@
 		See http://www2.cs.tum.edu/projects/cup/licence.php
 		-->
 
-		<!-- lib/BCEL replacement. 6.3 appears to work but probably BCEL 5.1 (of 
-			25 April 2003) is what Xalan uses, since 5.2 not released until June 2006. 
+		<!-- lib/BCEL replacement. 6.3 appears to work but 5.0 rc1 appears to be what Xalan uses,
+            not BCEL 5.1 (of 25 April 2003), and not 5.2 (released June 2006). 
 			But 5.2 is in maven central, so use that -->
 		<dependency>
 			<groupId>org.apache.bcel</groupId>

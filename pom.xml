@@ -32,9 +32,9 @@
         <!-- can't split out <module>xalan-core</module> containing org.apache.xml, since it depends on xpath.NodeList -->
         <module>xalan-interpretive</module>
         <module>xalan-xsltc</module>
+        <module>xalan-bundled-jar</module>
         
         <!-- 
-        <module>xalan-xsltc</module>
 	        <module>xalan-sample-servlet</module>
 	        <module>xalan-sample-translets</module>
 	        <module>xalan-sample-applet</module>
@@ -62,45 +62,6 @@
 				</configuration>
 			</plugin>
 		</plugins>        
-<!--        
-        <plugins>
-			<plugin> 
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>2.4.3</version>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-						<configuration>
-							<artifactSet>
-								<excludes>
-									<exclude>junit:junit</exclude>
-									<exclude>xerces:xercesImpl</exclude>
-									<exclude>xml-apis:xml-apis</exclude>
-								</excludes>								
-							</artifactSet>
-			              <shadedArtifactAttached>true</shadedArtifactAttached>
-			              <shadedClassifierName>shaded</shadedClassifierName>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>	
-        </plugins>            
-        -->        
-		<resources>
-			<resource>
-				<directory>src</directory>
-				<includes>
-					<include>**/*.properties</include>
-				</includes>
-			</resource>
-		     <resource>
-		       <directory>xalan-core/src/main/resources</directory><!--  META-INF/services is here for now -->
-		     </resource>
-		</resources>        
         
     </build>
 
