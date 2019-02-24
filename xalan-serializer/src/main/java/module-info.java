@@ -8,4 +8,6 @@ module xalan_serializer {
 	exports org.apache.xml.serializer.utils;
 
 	requires java.xml;
+	
+	opens org.docx4j.org.apache.xml.serializer; // resources	
 }
