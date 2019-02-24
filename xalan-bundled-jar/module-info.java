@@ -18,6 +18,8 @@ $ javac --patch-module xalan_bundled_jar=target/xalan-bundled-jar-2.7.3-SNAPSHOT
 	exports org.docx4j.org.apache.xml.serializer.dom3;
 	exports org.docx4j.org.apache.xml.serializer.utils;
 
+	opens org.docx4j.org.apache.xml.serializer; // resources
+	
 /* Xalan xalan_interpretive */
 
 	exports org.docx4j.org.apache.xalan;
