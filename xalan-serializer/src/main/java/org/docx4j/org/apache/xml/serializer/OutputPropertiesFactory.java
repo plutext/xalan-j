@@ -23,14 +23,15 @@ package org.docx4j.org.apache.xml.serializer;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.security.AccessController;
-import java.security.PrivilegedAction;
+//import java.security.AccessController;
+//import java.security.PrivilegedAction;
 import java.util.Enumeration;
 import java.util.Properties;
 
 import javax.xml.transform.OutputKeys;
 
 import org.docx4j.org.apache.xml.serializer.utils.MsgKey;
+import org.docx4j.org.apache.xml.serializer.utils.ResourceUtils;
 import org.docx4j.org.apache.xml.serializer.utils.Utils;
 import org.docx4j.org.apache.xml.serializer.utils.WrappedRuntimeException;
 
@@ -188,13 +189,13 @@ public final class OutputPropertiesFactory
     /** the directory in which the various method property files are located */
     private static final String PROP_DIR = SerializerBase.PKG_PATH+'/';
     /** property file for default XML properties */
-    private static final String PROP_FILE_XML = "output_xml.properties";
+    private static final String PROP_FILE_XML = PROP_DIR + "output_xml.properties";
     /** property file for default TEXT properties */
-    private static final String PROP_FILE_TEXT = "output_text.properties";
+    private static final String PROP_FILE_TEXT = PROP_DIR + "output_text.properties";
     /** property file for default HTML properties */
-    private static final String PROP_FILE_HTML = "output_html.properties";
+    private static final String PROP_FILE_HTML = PROP_DIR + "output_html.properties";
     /** property file for default UNKNOWN (Either XML or HTML, to be determined later) properties */
-    private static final String PROP_FILE_UNKNOWN = "output_unknown.properties";
+    private static final String PROP_FILE_UNKNOWN = PROP_DIR + "output_unknown.properties";
 
     //************************************************************
     //*  PRIVATE STATIC FIELDS
@@ -359,26 +360,27 @@ public final class OutputPropertiesFactory
 
         try
         {
-            if (ACCESS_CONTROLLER_CLASS != null)
-            {
-                is = (InputStream) AccessController
-                    .doPrivileged(new PrivilegedAction() {
-                        public Object run()
-                        {
-                            return OutputPropertiesFactory.class
-                                .getResourceAsStream(resourceName);
-                        }
-                    });
-            }
-            else
-            {
-                // User may be using older JDK ( JDK < 1.2 )
-                is = OutputPropertiesFactory.class
-                    .getResourceAsStream(resourceName);
-            }
-
-            bis = new BufferedInputStream(is);
-            props.load(bis);
+//            if (ACCESS_CONTROLLER_CLASS != null)
+//            {
+//                is = (InputStream) AccessController
+//                    .doPrivileged(new PrivilegedAction() {
+//                        public Object run()
+//                        {
+//                            return OutputPropertiesFactory.class
+//                                .getResourceAsStream(resourceName);
+//                        }
+//                    });
+//            }
+//            else
+//            {
+//                // User may be using older JDK ( JDK < 1.2 )
+//                is = OutputPropertiesFactory.class
+//                    .getResourceAsStream(resourceName);
+//            }
+//
+//            bis = new BufferedInputStream(is);
+        	 bis = new BufferedInputStream(ResourceUtils.getResource(resourceName));        	
+             props.load(bis);
         }
         catch (IOException ioe)
         {
@@ -396,23 +398,23 @@ public final class OutputPropertiesFactory
                 //"Could not load '"+resourceName+"' (check CLASSPATH), now using just the defaults ", ioe);
             }
         }
-        catch (SecurityException se)
-        {
-            // Repeat IOException handling for sandbox/applet case -sc
-            if (defaults == null)
-            {
-                throw se;
-            }
-            else
-            {
-                throw new WrappedRuntimeException(
-                    Utils.messages.createMessage(
-                        MsgKey.ER_COULD_NOT_LOAD_RESOURCE,
-                        new Object[] { resourceName }),
-                    se);
-                //"Could not load '"+resourceName+"' (check CLASSPATH, applet security), now using just the defaults ", se);
-            }
-        }
+//        catch (SecurityException se)
+//        {
+//            // Repeat IOException handling for sandbox/applet case -sc
+//            if (defaults == null)
+//            {
+//                throw se;
+//            }
+//            else
+//            {
+//                throw new WrappedRuntimeException(
+//                    Utils.messages.createMessage(
+//                        MsgKey.ER_COULD_NOT_LOAD_RESOURCE,
+//                        new Object[] { resourceName }),
+//                    se);
+//                //"Could not load '"+resourceName+"' (check CLASSPATH, applet security), now using just the defaults ", se);
+//            }
+//        }
         finally
         {
             if (bis != null)
@@ -483,6 +485,7 @@ public final class OutputPropertiesFactory
 
         return props;
     }
+    
 
     /**
      * Fix up a string in an output properties file according to
