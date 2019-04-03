@@ -17,7 +17,7 @@
 	
 	<version>${revision}</version>
 	<properties>
-		<revision>11.7.3-SNAPSHOT</revision>
+		<revision>8.7.3-SNAPSHOT</revision>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
 	    <github.global.server>github</github.global.server>
@@ -57,7 +57,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<release>11</release>
+					<source>1.8</source>
+					<target>1.8</target>
 				</configuration>
 			</plugin>
 		</plugins>        
