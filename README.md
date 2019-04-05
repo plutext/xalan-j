@@ -1,31 +1,30 @@
-# Xalan for Java 11
+# Xalan for Java 8
 
-This is Xalan:
+This is Xalan (xalan-j_2_7_1_maint):
 
 1. converted to a maven multi module project; 
-2. with module-info.java files; and
-3. https://issues.apache.org/jira/browse/XALANJ-2540 path applied
+2. https://issues.apache.org/jira/browse/XALANJ-2540 path applied
+3. we seem to need Xerces to compile under Java 8 (to provide org.w3c.dom.xpath)
 
-It is targeted at Java 11, so the defalt branch is Plutext_Java11  
+There is another branch which is targeted at Java 11; the differences being:
 
-Things would work under Java 8, provided:
-
-* you remove the module-info.java files.
-* in the config of maven-compiler-plugin, you change from <release>11</release> to <source>1.8</source><target>1.8</target>
-
-(the poms could be tweaked to do this automatically, so it could build under either 8 or 11)
+* module-info.java files; and
+* in the config of maven-compiler-plugin, you change from <source>1.8</source><target>1.8</target> to <release>11</release>
+ 
 
 ### Note re IncrementalSAXSource_Xerces
 
-I removed IncrementalSAXSource_Xerces so that Xerces is not required. This was to solve "javax.xml coming from 2 modules
-	The package org.w3c.dom is accessible from more than one module: java.xml, xercesImpl"
+I moved IncrementalSAXSource_Xerces so that Xerces is not required (except for the Java 8 org.w3c.dom.xpath issue). 
+
+This was to solve "javax.xml coming from 2 modules
+	The package org.w3c.dom is accessible from more than one module: java.xml, xercesImpl" under Java 8
 	
-However, IncrementalSAXSource_Xerces may be useful, so it would be good to retain it.
+IncrementalSAXSource_Xerces is in a (currently unused) module xalan-interpretive-xerces
 
 
 ## Build
 
-Using Java 11 (on arch or manjaro, that would be `sudo archlinux-java set java-11-openjdk`) and a recent mvn:
+Using Java 8 (on arch or manjaro, that would be `sudo archlinux-java set java-8-openjdk`) and a recent mvn:
 
 ```
 mvn clean
@@ -37,6 +36,7 @@ mvn install
 * xalan-serializer
 * (there is no module xalan-core containing org.apache.xml, since it depends on xpath.NodeList)
 * xalan-interpretive (including xpath)
+* xalan-interpretive-xerces (currently not used)
 * xalan-xsltc (including java_cup.runtime)
 * xalan-bundled-jar (builds a shaded jar containing serializer, interpreter, xpath and xsltc)
 
