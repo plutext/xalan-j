@@ -9,7 +9,7 @@
   <parent>
     <groupId>org.sonatype.oss</groupId>
     <artifactId>oss-parent</artifactId>
-    <version>7</version>
+    <version>9</version>
   </parent>
 
     <groupId>org.docx4j.org.apache</groupId>
@@ -17,7 +17,7 @@
 	
 	<version>${revision}</version>
 	<properties>
-		<revision>8.7.3-SNAPSHOT</revision>
+		<revision>8.0.0-SNAPSHOT</revision>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
 	    <github.global.server>github</github.global.server>
