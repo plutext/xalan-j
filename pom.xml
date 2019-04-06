@@ -49,6 +49,10 @@
   
   <url>https://github.com/plutext/xalan-j</url>  
 
+	<scm>
+	    <developerConnection>scm:git|git@github.com:plutext/xalan-j.git</developerConnection>
+    </scm>
+
         
     <build>        
         <plugins>
