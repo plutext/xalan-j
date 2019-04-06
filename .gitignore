@@ -3,24 +3,28 @@ build
 xalan-serializer/target
 xalan-interpretive/target
 xalan-xsltc/target
+xalan-metainf/target
 xalan-bundled-jar/target
 
 .settings
 xalan-serializer/.settings
 xalan-interpretive/.settings
 xalan-xsltc/.settings
+xalan-metainf/.settings
 xalan-bundled-jar/.settings
 
 .project
 xalan-serializer/.project
 xalan-interpretive/.project
 xalan-xsltc/.project
+xalan-metainf/.project
 xalan-bundled-jar/.project
 
 .classpath
 xalan-serializer/.classpath
 xalan-interpretive/.classpath
 xalan-xsltc/.classpath
+xalan-metainf/.classpath
 xalan-bundled-jar/.classpath
 
 xalan-bundled-jar/module-info.class

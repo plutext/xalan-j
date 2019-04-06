@@ -76,6 +76,12 @@
 			<version>${project.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.docx4j.org.apache</groupId>
+			<artifactId>xalan-metainf</artifactId>
+			<version>${project.version}</version>
+		</dependency>
+
 <!--        
 		<dependency>
 			<groupId>org.apache.bcel</groupId>
