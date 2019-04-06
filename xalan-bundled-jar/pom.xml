@@ -31,20 +31,6 @@
 							<goal>shade</goal>
 						</goals>
 						<configuration>
-                            <filters>
-                                <filter>
-                                    <artifact>org.docx4j.org.apache:xalan-serializer</artifact>
-                                    <excludes>
-                                        <exclude>module-info.class</exclude>
-                                    </excludes>
-                                </filter>                            
-                                <filter>
-                                    <artifact>org.docx4j.org.apache:xalan-interpretive</artifact>
-                                    <excludes>
-                                        <exclude>module-info.class</exclude>
-                                    </excludes>
-                                </filter>                            
-                            </filters>                            
 							<artifactSet>
 								<excludes>
 									<exclude>junit:junit</exclude>
@@ -59,27 +45,15 @@
 				</executions>
 			</plugin>
 
-			<!-- add module-info: this assumes Linux, but https://maven.apache.org/plugins/maven-compiler-plugin/examples/jpms_args.html 
-				is a world of pain -->
+			<!--  don't deploy this jar to Maven Central -->			
 			<plugin>
-				<artifactId>exec-maven-plugin</artifactId>
-				<groupId>org.codehaus.mojo</groupId>
-				<executions>
-					<execution>
-						<id>patch</id>
-						<phase>package</phase>
-						<goals>
-							<goal>exec</goal>
-						</goals>
-						<configuration>
-							<executable>./add-module-info.sh</executable>
-							<arguments>
-								<argument>xalan-bundled-jar-${revision}-shaded.jar</argument>
-							</arguments>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>            
+			  <groupId>org.apache.maven.plugins</groupId>
+			  <artifactId>maven-deploy-plugin</artifactId>
+			  <version>3.0.0-M1</version>
+			  <configuration>
+			    <skip>true</skip>
+			  </configuration>
+			</plugin>			
 
         </plugins>            
 
