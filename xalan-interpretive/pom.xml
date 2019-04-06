@@ -36,7 +36,7 @@
 		<dependency>
 			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-serializer</artifactId>
-			<version>${revision}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 	<!-- Build problems with Java 8: package org.w3c.dom.xpath does not exist. 
