@@ -12,7 +12,7 @@
     <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>
 	
-	<version>${revision}</version>
+	<version>8.0.0</version>
 	<properties>
 		<revision>8.0.0-SNAPSHOT</revision>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,7 +50,7 @@
 
 	<scm>
 	    <developerConnection>scm:git|git@github.com:plutext/xalan-j.git</developerConnection>
-      <tag>HEAD</tag>
+      <tag>xalan-parent-8.0.0</tag>
   </scm>
 
 
@@ -90,10 +90,10 @@
 			    <configuration>
 			        <updatePomFile>true</updatePomFile>
 			        <pomElements>
-			            <name/>
-			            <description/>
-			            <url/>
-			            <scm/>
+			            <name />
+			            <description />
+			            <url />
+			            <scm />
 			        </pomElements>                  
 			    </configuration>
 			    <executions>
