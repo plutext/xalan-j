@@ -73,13 +73,13 @@
 		<dependency>
 			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-interpretive</artifactId>
-			<version>${revision}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-metainf</artifactId>
-			<version>${revision}</version>
+			<version>${project.version}</version>
 		</dependency>
 
 <!--        
