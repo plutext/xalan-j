@@ -66,6 +66,12 @@
 			<organization>Plutext</organization>
 			<organizationUrl>http://www.plutext.com</organizationUrl>
 		</developer>
+		<developer>
+			<name>Xalan committers</name>
+			<email>dev@xalan.apache.org</email>
+			<organization>Apache</organization>
+			<organizationUrl>http://people.apache.org/committers-by-project.html#xalan</organizationUrl>
+		</developer>
 	</developers>
 	
 	<scm>
