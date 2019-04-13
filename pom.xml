@@ -11,7 +11,7 @@
 
     <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>	
-	<version>8.0.1-SNAPSHOT</version>
+	<version>${revision}</version>
 	
 	<properties>
 		<revision>8.0.0-SNAPSHOT</revision>
@@ -48,10 +48,29 @@
   
   <url>https://github.com/plutext/xalan-j</url>  
 
+	<licenses>
+	  <license>
+	    <name>Apache 2</name>
+	    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+	  </license>
+  	</licenses>
+
+	<!--  https://central.sonatype.org/pages/requirements.html
+	      requires developers be populated. Of course most 
+	      of the work was originally done by the Xalan committers;
+	      thank you! and see http://people.apache.org/committers-by-project.html#xalan -->
+	<developers>
+		<developer>
+			<name>Jason Harrop</name>
+			<email>jason@plutext.org</email>
+			<organization>Plutext</organization>
+			<organizationUrl>http://www.plutext.com</organizationUrl>
+		</developer>
+	</developers>
+	
 	<scm>
-	    <developerConnection>scm:git|git@github.com:plutext/xalan-j.git</developerConnection>
-      <tag>xalan-parent-8.0.0</tag>
-  </scm>
+		<developerConnection>scm:git|git@github.com:plutext/xalan-j.git</developerConnection>
+	</scm>
 
 
 	<build>
