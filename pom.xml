@@ -12,7 +12,7 @@
     <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>
 	
-	<version>8.0.0</version>
+	<version>${revision}</version>
 	<properties>
 		<revision>8.0.0-SNAPSHOT</revision>
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -88,13 +88,8 @@
 			    <artifactId>flatten-maven-plugin</artifactId>
 			    <version>1.0.0</version>
 			    <configuration>
-			        <updatePomFile>true</updatePomFile>
-			        <pomElements>
-			            <name />
-			            <description />
-			            <url />
-			            <scm />
-			        </pomElements>                  
+			        <!--  <updatePomFile>true</updatePomFile>-->
+			        <flattenMode>oss</flattenMode>           
 			    </configuration>
 			    <executions>
 			        <execution>

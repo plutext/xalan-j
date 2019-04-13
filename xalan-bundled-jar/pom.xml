@@ -5,7 +5,7 @@
   <parent>
     <groupId>org.docx4j.org.apache</groupId>
     <artifactId>xalan-parent</artifactId>
-	<version>8.0.0</version>
+	<version>${revision}</version>
   </parent>
 
 	<artifactId>xalan-bundled-jar</artifactId>
