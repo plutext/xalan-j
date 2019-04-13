@@ -11,7 +11,7 @@
 
     <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>	
-	<version>8.0.0</version>
+	<version>8.0.1-SNAPSHOT</version>
 	
 	<properties>
 		<revision>8.0.0-SNAPSHOT</revision>
