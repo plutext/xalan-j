@@ -5,14 +5,14 @@
   <parent>
     <groupId>org.docx4j.org.apache</groupId>
     <artifactId>xalan-parent</artifactId>
-	<version>8.0.2-SNAPSHOT</version>
+	<version>${revision}</version>
   </parent>
 
 	<artifactId>xalan-bundled-jar</artifactId>
 	<packaging>jar</packaging>
 	<name>xalan-bundled-jar</name>
 
-	<description>Creates one big xalan jar (Xalan interpretive + XSLTC + support jars)</description>
+	<description>Creates one big xalan jar (Xalan interpretive support jars)</description>
 	<url>http://xml.apache.org/xalan-j/</url>  
         
     <build>
@@ -73,13 +73,13 @@
 		<dependency>
 			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-interpretive</artifactId>
-			<version>${project.version}</version>
+			<version>${revision}</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.docx4j.org.apache</groupId>
 			<artifactId>xalan-metainf</artifactId>
-			<version>${project.version}</version>
+			<version>${revision}</version>
 		</dependency>
 
 <!--        
