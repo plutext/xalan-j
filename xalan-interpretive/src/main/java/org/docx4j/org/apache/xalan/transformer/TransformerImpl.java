@@ -90,6 +90,8 @@ import org.docx4j.org.apache.xpath.VariableStack;
 import org.docx4j.org.apache.xpath.XPathContext;
 import org.docx4j.org.apache.xpath.functions.FuncExtFunction;
 import org.docx4j.org.apache.xpath.objects.XObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.ContentHandler;
 import org.xml.sax.SAXException;
@@ -108,7 +110,9 @@ public class TransformerImpl extends Transformer
         implements Runnable, DTMWSFilter, ExtensionsProvider, org.docx4j.org.apache.xml.serializer.SerializerTrace
 {
 
-  // Synch object to gaurd against setting values from the TrAX interface 
+	private static Logger log = LoggerFactory.getLogger(TransformerImpl.class);		
+	
+  // Synch object to guard against setting values from the TrAX interface 
   // or reentry while the transform is going on.
 
   /** NEEDSDOC Field m_reentryGuard          */
@@ -472,8 +476,20 @@ public class TransformerImpl extends Transformer
   public Object extFunction(FuncExtFunction extFunction, Vector argVec)
             throws javax.xml.transform.TransformerException
   {
+	  if (extFunction==null) {
+		  log.error("nulll extFunction");
+	  } else {
+		  log.debug(extFunction.getFunctionName());
+	  }
+	  
+	  ExtensionsTable ex = getExtensionsTable();
+	  XPathContext xpc = getXPathContext();
+	  if (xpc==null) {
+		  log.error("nulll XPathContext");
+	  }
+	  
     return getExtensionsTable().extFunction(extFunction, argVec,
-                                            getXPathContext().getExpressionContext());   
+                                            xpc.getExpressionContext());   
   }
   
   //=========================

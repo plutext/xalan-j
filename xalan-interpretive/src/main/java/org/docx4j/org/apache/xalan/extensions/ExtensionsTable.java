@@ -28,6 +28,8 @@ import org.docx4j.org.apache.xalan.res.XSLTErrorResources;
 import org.docx4j.org.apache.xalan.templates.StylesheetRoot;
 import org.docx4j.org.apache.xpath.XPathProcessorException;
 import org.docx4j.org.apache.xpath.functions.FuncExtFunction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Class holding a table registered extension namespace handlers
@@ -35,7 +37,9 @@ import org.docx4j.org.apache.xpath.functions.FuncExtFunction;
  */
 public class ExtensionsTable
 {  
-  /**
+	private static Logger log = LoggerFactory.getLogger(ExtensionsTable.class);		
+
+	/**
    * Table of extensions that may be called from the expression language
    * via the call(name, ...) function.  Objects are keyed on the call
    * name.
@@ -232,9 +236,12 @@ public class ExtensionsTable
       }
       else
       {
+      	  log.error("null ExtensionHandler for namespace " + ns);    	
         throw new XPathProcessorException(XSLMessages.createMessage(XSLTErrorResources.ER_EXTENSION_FUNC_UNKNOWN, 
                                           new Object[]{ns, extFunction.getFunctionName()})); 
       }
+    } else {
+    	log.error("null namespace");    	
     }
     return result;        
   }

@@ -36,6 +36,8 @@ import org.docx4j.org.apache.xpath.compiler.XPathParser;
 import org.docx4j.org.apache.xpath.functions.Function;
 import org.docx4j.org.apache.xpath.objects.XObject;
 import org.docx4j.org.apache.xpath.res.XPATHErrorResources;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * The XPath class wraps an expression object and provides general services 
@@ -44,7 +46,10 @@ import org.docx4j.org.apache.xpath.res.XPATHErrorResources;
  */
 public class XPath implements Serializable, ExpressionOwner
 {
-    static final long serialVersionUID = 3976493477939110553L;
+
+	private static Logger log = LoggerFactory.getLogger(XPath.class);		
+	
+	static final long serialVersionUID = 3976493477939110553L;
 
   /** The top of the expression tree. 
    *  @serial */
@@ -409,6 +414,9 @@ public class XPath implements Serializable, ExpressionOwner
 
     try
     {
+      if (log.isDebugEnabled()) {
+    	  log.debug("expr: "+m_mainExp);
+      }
       return m_mainExp.bool(xctxt);
     }
     catch (TransformerException te)

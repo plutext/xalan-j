@@ -183,5 +183,13 @@
         </pluginManagement>
     </build>
 
+	<dependencies>
 
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.26</version> <!-- keep this same version as docx4j -->
+		</dependency>
+		
+	</dependencies>
 </project>
