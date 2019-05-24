@@ -28,3 +28,6 @@ xalan-metainf/.classpath
 xalan-bundled-jar/.classpath
 
 xalan-bundled-jar/module-info.class
+
+
+.flattened-pom.xml
