@@ -26,7 +26,11 @@
     
     <modules>
         <module>xalan-serializer</module>
-        <!-- can't split out <module>xalan-core</module> containing org.apache.xml, since it depends on xpath.NodeList -->
+        <!-- can't split out a <module>xalan-xpath</module> containing org.apache.xml and xpath,
+             since these still have some deps on xalan-interpretive 
+             (eg using an extension function in an xpath expression).
+             If we aren't using that anywhere, we may be able to do remove that and do it, but there are still other complexities.
+             To see these, search for apache.xalan in apache.xpath -->
         <module>xalan-interpretive</module>
         <!-- <module>xalan-interpretive-xerces</module>  -->
         <module>xalan-metainf</module> 
