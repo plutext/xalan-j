@@ -82,7 +82,7 @@ public class ExtensionHandlerGeneral extends ExtensionHandler
   private static String BSF_MANAGER ;
   
   /** Default BSFManager name */
-  private static final String DEFAULT_BSF_MANAGER = "org.docx4j.org.apache.bsf.BSFManager";
+  private static final String DEFAULT_BSF_MANAGER = "org.apache.bsf.BSFManager";  // https://commons.apache.org/proper/commons-bsf/
   
   /** Property name to load the BSFManager class */
   private static final String propName = "org.docx4j.org.apache.xalan.extensions.bsf.BSFManager";
