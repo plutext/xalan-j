@@ -34,7 +34,7 @@
              To see these, search for apache.xalan in apache.xpath -->
         <module>xalan-interpretive</module>
         <!-- <module>xalan-interpretive-xerces</module>  -->
-        <module>xalan-metainf</module> 
+        <!-- <module>xalan-metainf</module> in 11.0.0, resources are in xalan-interpretive -->  
         <module>xalan-bundled-jar</module>
         
         <!-- 
