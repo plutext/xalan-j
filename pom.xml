@@ -18,7 +18,6 @@
 	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
 	    <github.global.server>github</github.global.server>
-	    <maven.javadoc.skip>true</maven.javadoc.skip> <!--  see https://stackoverflow.com/questions/7412016/how-can-i-disable-the-maven-javadoc-plugin-from-the-command-line -->
 	</properties>
 
     <packaging>pom</packaging>
@@ -99,7 +98,8 @@
 			<!-- hiccups on org.slf4j since it is a multi-release jar
 				 broken in Java 11, fixed in Java 12
 				 https://bugs.openjdk.java.net/browse/JDK-8222309
-			 
+				 
+				 Since Maven Central requires Javadoc, we have to build with Java 12 -->
 
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
@@ -117,7 +117,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			-->
 
 			<plugin>
 			    <groupId>org.codehaus.mojo</groupId>
@@ -145,6 +144,37 @@
 			    </executions>
 			</plugin>			
 
+		     <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-enforcer-plugin</artifactId>
+		        <version>3.0.0-M2</version> 
+		        <executions>
+		          <execution>
+		            <id>enforce-bytecode-version</id>
+		            <goals>
+		              <goal>enforce</goal>
+		            </goals>
+		            <configuration>
+		              <rules>
+		                <enforceBytecodeVersion>
+		                  <maxJdkVersion>11</maxJdkVersion>
+		                  <excludes>
+		                    <exclude>org.mindrot:jbcrypt</exclude>
+		                  </excludes>
+		                </enforceBytecodeVersion>
+		              </rules>
+		              <fail>true</fail>
+		            </configuration>
+		          </execution>
+		        </executions>
+		        <dependencies>
+		          <dependency>
+		            <groupId>org.codehaus.mojo</groupId>
+		            <artifactId>extra-enforcer-rules</artifactId>
+		            <version>1.2</version>
+		          </dependency>
+		        </dependencies> 
+		      </plugin>
 			
 		</plugins>        
         
