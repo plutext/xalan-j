@@ -11,7 +11,7 @@
 
     <groupId>org.docx4j.org.apache</groupId>
 	<artifactId>xalan-parent</artifactId>	
-	<version>11.0.0</version>
+	<version>11.0.1-SNAPSHOT</version>
 	
 	<properties>
 		<revision>11.0.0-SNAPSHOT</revision>
@@ -81,7 +81,7 @@
 	
 	<scm>
 		<developerConnection>scm:git|git@github.com:plutext/xalan-j.git</developerConnection>
-	  <tag>xalan-parent-11.0.0</tag>
+	  <tag>HEAD</tag>
   </scm>
 
 
