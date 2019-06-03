@@ -1,16 +1,10 @@
-# Xalan for Java 8
+# Xalan for Java 11
 
 This is Xalan (xalan-j_2_7_1_maint):
 
 1. converted to a maven multi module project; 
-2. https://issues.apache.org/jira/browse/XALANJ-2540 path applied
-3. we seem to need Xerces to compile under Java 8 (to provide org.w3c.dom.xpath)
-
-There is another branch which is targeted at Java 11; the differences being:
-
-* module-info.java files; and
-* in the config of maven-compiler-plugin, you change from <source>1.8</source><target>1.8</target> to <release>11</release>
- 
+2. https://issues.apache.org/jira/browse/XALANJ-2540 path applied 
+3. repackaged in docx4j namespace
 
 ### Note re IncrementalSAXSource_Xerces
 
@@ -24,7 +18,7 @@ IncrementalSAXSource_Xerces is in a (currently unused) module xalan-interpretive
 
 ## Build
 
-Using Java 8 (on arch or manjaro, that would be `sudo archlinux-java set java-8-openjdk`) and a recent mvn:
+Using Java 12 (on arch or manjaro, that would be `sudo archlinux-java set java-12-openjdk`) and a recent mvn:
 
 ```
 mvn clean
