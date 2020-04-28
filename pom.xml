@@ -1,68 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project 
-  xmlns="http://maven.apache.org/POM/4.0.0" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project
+        xmlns="http://maven.apache.org/POM/4.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
-  
-  <parent>
-    <groupId>org.sonatype.oss</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>7</version>
-  </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
 
     <groupId>org.apache</groupId>
-	<artifactId>xalan-parent</artifactId>
-	
+    <artifactId>xalan-parent</artifactId>
+
 	<version>${revision}</version>
-	<properties>
+    <properties>
 		<revision>2.7.3-SNAPSHOT</revision>
-	    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-	    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
-	    <github.global.server>github</github.global.server>
-	</properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.server>github</github.global.server>
+    </properties>
 
     <packaging>pom</packaging>
 
-  <name>Xalan Java</name>
-    
+    <name>Xalan Java</name>
+
     <modules>
         <module>xalan-serializer</module>
         <!-- can't split out <module>xalan-core</module> containing org.apache.xml, since it depends on xpath.NodeList -->
         <module>xalan-interpretive</module>
         <module>xalan-xsltc</module>
         <module>xalan-bundled-jar</module>
-        
-        <!-- 
+
+        <!--
 	        <module>xalan-sample-servlet</module>
 	        <module>xalan-sample-translets</module>
 	        <module>xalan-sample-applet</module>
          -->
-    </modules>  
+    </modules>
 
 
-  <description>
-    Xalan-Java is an XSLT processor for transforming XML documents into HTML,
-    text, or other XML document types. It implements XSL Transformations (XSLT)
-    Version 1.0 and XML Path Language (XPath) Version 1.0 and can be used from
-    the command line, in an applet or a servlet, or as a module in other program.
-  </description>
-  <url>http://xml.apache.org/xalan-j/</url>  
+    <description>
+        Xalan-Java is an XSLT processor for transforming XML documents into HTML,
+        text, or other XML document types. It implements XSL Transformations (XSLT)
+        Version 1.0 and XML Path Language (XPath) Version 1.0 and can be used from
+        the command line, in an applet or a servlet, or as a module in other program.
+    </description>
+    <url>http://xml.apache.org/xalan-j/</url>
 
-        
-    <build>        
+
+    <build>
         <plugins>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
-				<configuration>
-					<release>11</release>
-				</configuration>
-			</plugin>
-		</plugins>        
-        
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <compilerArgs>
+                        <arg>-XDignore.symbol.file</arg>
+                    </compilerArgs>
+                    <fork>true</fork>
+                </configuration>
+            </plugin>
+        </plugins>
+
     </build>
 
 
