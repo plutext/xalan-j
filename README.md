@@ -55,3 +55,6 @@ See http://www2.cs.tum.edu/projects/cup/licence.php
 ## Tests
 
 See https://github.com/plutext/xalan-test
+
+## Modified for java 8
+This version has been modified to make it work with java 8
